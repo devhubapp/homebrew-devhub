@@ -5,6 +5,7 @@ cask 'devhub' do
   url "https://github.com/devhubapp/devhub/releases/download/v#{version}/DevHub-#{version}.dmg"
   appcast 'https://github.com/devhubapp/devhub/releases.atom'
   name 'DevHub'
+  desc 'TweetDeck for GitHub'
   homepage 'https://github.com/devhubapp/devhub'
 
   auto_updates true
