@@ -3,7 +3,6 @@ cask "devhub" do
   sha256 "d6f348fbebbd9acb2f0a4554ffab635479ab3f2105c0a94b6c1d75ddcf92d4c2"
 
   url "https://github.com/devhubapp/devhub/releases/download/v#{version}/DevHub-#{version}.dmg"
-  appcast "https://github.com/devhubapp/devhub/releases.atom"
   name "DevHub"
   desc "TweetDeck for GitHub"
   homepage "https://github.com/devhubapp/devhub"
@@ -11,6 +10,11 @@ cask "devhub" do
   auto_updates true
 
   app "DevHub.app"
+
+  livecheck do
+    url "https://github.com/devhubapp/devhub/releases/latest"
+    strategy :github_latest
+  end
 
   zap trash: [
     "~/Library/Application Support/Caches/devhub-updater",
